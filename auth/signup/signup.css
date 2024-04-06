@@ -1,0 +1,201 @@
+form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 850px;
+    height: 500px;
+    border-radius: 40px;
+    background-color: #181818;
+    overflow: hidden;
+}
+form .progress-bar {
+    z-index: 99;
+    position: absolute;
+    top: 20px;
+    width: 80%;
+    height: 10px;
+    border-radius: 20px;
+    background-color: rgb(240, 240, 240);
+    overflow: hidden;
+}
+form .progress-bar .bar {
+    display: block;
+    width: 20%;
+    height: 100%;
+    border-radius: 18px;
+    background-color: var(--second-color);
+    transition: .3s;
+}
+form .title {
+    position: absolute;
+    top: 80px;
+    width: 80%;
+    height: 50px;
+    border-bottom: 2px solid gray;
+}
+
+
+form .box {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 80px;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    padding: 0 20px 0 80px;
+    transform: translateX(850px);
+    transition: .5s;
+}
+form .box.active {
+    transform: translateX(0);
+}
+form .box.check {
+    transform: translateX(-850px);
+}
+form .box .contain .bx {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 20px 0;
+}
+form .box .contain .bx i {
+    margin-right: 10px;
+}
+form .box .contain .bx input {
+    z-index: 2;
+    width: 300px;
+    height: 60px;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 500;
+    border: 3px solid var(--main-color);
+    border-radius: 13px;
+    outline: none;
+    background-color: transparent;
+}
+form .box .contain .bx input:focus ~ label,
+form .box .contain .bx input:not(:placeholder-shown) ~ label {
+    z-index: 3;
+    transform: translate(30px, -29px) scale(0.7);
+}
+form .box .contain .bx label {
+    position: absolute;
+    padding: 0 5px;
+    font-weight: 600;
+    transform: translateX(40px);
+    background-color: #181818;
+    transition: .3s;
+}
+
+form .box .info {
+    letter-spacing: 1.1px;
+}
+form .box .info .f-para {
+    margin: 10px 0;
+}
+form .box .info .s-para {
+    line-height: 30px;
+}
+form .box .info .s-para li {
+    font-size: 12px;
+}
+
+form .al-ac {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+}
+form .al-ac a {
+    color: var(--main-color);
+    font-weight: 600;
+    transition: .3s;
+}
+form .al-ac a:hover {
+    color: #2986ff;
+    text-decoration: underline;
+}
+
+form .box .button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 15px 35px;
+    border-radius: 15px;
+    background-color: var(--main-color);
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+}
+
+form .box .button-previous {
+    bottom: 0;
+    left: 25px;
+    
+}
+form .box .button-next,
+form .box .button-sign {
+    bottom: 0;
+    right: 25px;
+
+}
+
+form .box .button-next span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+form .box .button-previous span {
+    display: block;
+    margin-right: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+form .box .button i {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+form .box .button:hover {
+    transform: scale(1.05);
+}
+form .box .button-next:hover i {
+    transform: translateX(1.5em) scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+form .box .button-previous:hover i {
+    transform: translateX(-2em) scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+form .box .button:hover span {
+    opacity: 0;
+    transition: 0.3s linear;
+}
+form .box .button:active {
+    transform: scale(0.95);
+}
+
+form .box .button-sign:hover span {
+    color: var(--main-color);
+    opacity: 1;
+}
+.button-sign:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+   
+.button-sign:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
